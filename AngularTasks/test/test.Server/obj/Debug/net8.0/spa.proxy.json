@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\..\\test.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
