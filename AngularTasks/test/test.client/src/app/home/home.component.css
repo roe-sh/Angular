@@ -1,3 +1,63 @@
 img.d-block.w-100 {
   height: 50vh;
 }
+/* Custom Carousel Styling */
+.custom-carousel {
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+  .custom-carousel .carousel-inner img {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .custom-carousel .carousel-item.active img {
+    transform: scale(1.05); /* Slight zoom effect for the active item */
+  }
+
+/* Custom controls styling */
+.custom-control-prev,
+.custom-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+  .custom-control-prev:hover,
+  .custom-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+  }
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* Smooth transition between slides */
+.custom-carousel .carousel-item {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-control-prev,
+  .custom-control-next {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

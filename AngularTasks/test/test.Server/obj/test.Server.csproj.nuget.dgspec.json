@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\test.Server.csproj": {}
+    "C:\\Users\\Orange\\Desktop\\Angular\\AngularTasks\\test\\test.Server\\test.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\test.Server.csproj": {
+    "C:\\Users\\Orange\\Desktop\\Angular\\AngularTasks\\test\\test.Server\\test.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\test.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Orange\\Desktop\\Angular\\AngularTasks\\test\\test.Server\\test.Server.csproj",
         "projectName": "test.Server",
-        "projectPath": "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\test.Server.csproj",
+        "projectPath": "C:\\Users\\Orange\\Desktop\\Angular\\AngularTasks\\test\\test.Server\\test.Server.csproj",
         "packagesPath": "C:\\Users\\Orange\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Orange\\Downloads\\Angular-main\\Angular-main\\test\\test.Server\\obj\\",
+        "outputPath": "C:\\Users\\Orange\\Desktop\\Angular\\AngularTasks\\test\\test.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,6 +53,26 @@
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
               "version": "[8.*-*, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
