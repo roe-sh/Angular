@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService, Category } from '../services/category.service';  // Correct import for Category
+import { CategoryService, Category } from '../services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -9,7 +10,7 @@ import { CategoryService, Category } from '../services/category.service';  // Co
 export class CategoriesComponent implements OnInit {
   categories: Category[] = [];
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe(
@@ -23,6 +24,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   viewCategoryProducts(categoryId: number): void {
-    // Navigate or perform action to view products by category
+    
+    this.router.navigate(['/products/category', categoryId]);
   }
 }

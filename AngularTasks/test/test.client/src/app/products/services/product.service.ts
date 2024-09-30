@@ -15,12 +15,14 @@ export interface Product {
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://localhost:7227/api/Categories';  
+  private apiUrl = 'https://localhost:7227/api';  
 
   constructor(private http: HttpClient) { }
 
-  // Fetch products by category
+ 
   getProductsByCategory(categoryId: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/categories/${categoryId}/products`);
+    return this.http.get<Product[]>(`${this.apiUrl}/Categories/${categoryId}/products`);
   }
+
+ 
 }

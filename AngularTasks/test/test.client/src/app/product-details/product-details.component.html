@@ -1,0 +1,21 @@
+
+<div *ngIf="product; else loading">
+  <div class="card">
+    <img [src]="product.image" class="card-img-top" alt="{{ product.productName }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.productName }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p><strong>Price:</strong> ${{ product.price | number: '1.2-2' }}</p>
+      <p><strong>Stock Quantity:</strong> {{ product.stockQuantity }} available</p>
+      <p *ngIf="product.discount"><strong>Discount:</strong> {{ product.discount }}%</p>
+
+     
+      <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<
+<ng-template #loading>
+  <p>Loading product details...</p>
+</ng-template>

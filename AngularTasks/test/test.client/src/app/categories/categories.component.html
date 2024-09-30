@@ -4,7 +4,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ category.name }}</h5>
         <p class="card-text">{{ category.description || 'No description available.' }}</p>
-        <a href=".../" class="btn btn-primary custom-btn">View Products</a>
+        <a routerLink="/Product/{{category.id}}" class="btn btn-primary custom-btn">View Products</a>
       </div>
     </div>
   </div>
