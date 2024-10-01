@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg p-4" style="width: 400px;">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Email Field -->
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email" />
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password" />
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="btn btn-primary btn-block w-100">Login</button>
+      </form>
+
+      <!-- Divider -->
+      <hr class="my-4">
+
+      <!-- Register Button -->
+      <p class="text-center">Don't have an account?</p>
+      <a routerLink="/register" class="btn btn-outline-primary w-100">Register</a>
+    </div>
+  </div>
+</div>

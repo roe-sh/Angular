@@ -1,21 +1,56 @@
+<div class="product-details-wrapper" *ngIf="product; else loading">
+  <div class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/products']">Products</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ product.productName }}</li>
+      </ol>
+    </nav>
 
-<div *ngIf="product; else loading">
-  <div class="card">
-    <img [src]="product.image" class="card-img-top" alt="{{ product.productName }}">
-    <div class="card-body">
-      <h5 class="card-title">{{ product.productName }}</h5>
-      <p class="card-text">{{ product.description }}</p>
-      <p><strong>Price:</strong> ${{ product.price | number: '1.2-2' }}</p>
-      <p><strong>Stock Quantity:</strong> {{ product.stockQuantity }} available</p>
-      <p *ngIf="product.discount"><strong>Discount:</strong> {{ product.discount }}%</p>
+    <!-- Product Header -->
+    <div class="product-header">
+      <h1>{{ product.productName }}</h1>
+    </div>
 
-     
-      <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+    <!-- Product Details Section -->
+    <div class="product-details-container">
+      <!-- Product Image Section -->
+      <div class="product-image">
+        <img [src]="product.image" alt="{{ product.productName }}">
+      </div>
+
+      <!-- Product Info Section -->
+      <div class="product-info">
+        <p class="product-description">{{ product.description }}</p>
+
+        <div class="product-pricing">
+          <strong class="price">${{ product.price | number: '1.2-2' }}</strong>
+          <span *ngIf="product.discount" class="discount-badge">{{ product.discount }}% OFF</span>
+        </div>
+
+        <p class="stock-info">
+          <strong>Stock Quantity:</strong>
+          <span [ngClass]="{'in-stock': product.stockQuantity > 0, 'out-of-stock': product.stockQuantity === 0}">
+            {{ product.stockQuantity }} available
+          </span>
+        </p>
+
+        <!-- Add to Cart Button -->
+        <div class="action-buttons">
+          <button class="btn btn-primary btn-lg" (click)="addToCart(product)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<
+<!-- Loading State -->
 <ng-template #loading>
-  <p>Loading product details...</p>
+  <div class="loading-spinner">
+    <p>Loading product details...</p>
+  </div>
 </ng-template>

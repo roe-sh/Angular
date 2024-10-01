@@ -17,8 +17,7 @@ export interface Product {
 })
 export class ProductDetailsService {
 
-  private apiUrl = 'https://localhost:7227/api/Products';  // Adjust with your actual API URL
-
+  private apiUrl = 'https://localhost:7227/api/Products';  
   constructor(private http: HttpClient) { }
 
   // Method to fetch product details by ID

@@ -32,12 +32,10 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  // Function to show SweetAlert when adding a product to the cart
+
   addToCart(product: Product | undefined): void {
     if (product) {
-      // You can trigger any cart-related logic here (e.g., adding to cart service)
 
-      // Show SweetAlert
       Swal.fire({
         title: 'Added to Cart!',
         text: `${product.productName} has been added to your cart.`,

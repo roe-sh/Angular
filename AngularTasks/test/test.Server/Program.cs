@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using test.Server.Models;
+using test.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// Register PasswordHasher as a scoped service in DI container
+builder.Services.AddScoped<PasswordHasher>();
 
 // Add DbContext
 builder.Services.AddDbContext<MyDbContext>(options =>
@@ -26,6 +29,7 @@ var app = builder.Build();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
 
 
 if (app.Environment.IsDevelopment())
