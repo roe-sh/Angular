@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';  // Import AuthService
-import { Router } from '@angular/router';  // Import Router for redirection
-import Swal from 'sweetalert2';  // Import SweetAlert2
+import { AuthService } from '../auth.service';  
+import { Router } from '@angular/router';  
+import Swal from 'sweetalert2'; 
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router  // Inject Router for navigation
+    private router: Router  
   ) { }
 
   ngOnInit(): void {
@@ -30,12 +30,12 @@ export class LoginComponent implements OnInit {
       this.authService.login(email, password).subscribe(
         response => {
           console.log('Login successful:', response);
-          // Redirect to the dashboard on successful login
+         
           this.router.navigate(['/dashboard']);
         },
         error => {
           console.error('Login failed:', error);
-          // Show SweetAlert if login fails
+       
           Swal.fire({
             icon: 'error',
             title: 'Login Failed',

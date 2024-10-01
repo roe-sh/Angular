@@ -20,7 +20,7 @@ export class ProductDetailsService {
   private apiUrl = 'https://localhost:7227/api/Products';  
   constructor(private http: HttpClient) { }
 
-  // Method to fetch product details by ID
+
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient , private router: Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -18,11 +19,10 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
     }, {
-      validator: this.passwordMatchValidator  // Add custom validator for password matching
+      validator: this.passwordMatchValidator 
     });
   }
 
-  // Custom validator to check if password and confirmPassword fields match
   passwordMatchValidator(formGroup: FormGroup) {
     const password = formGroup.get('password')?.value;
     const confirmPassword = formGroup.get('confirmPassword')?.value;
@@ -34,13 +34,15 @@ export class RegisterComponent implements OnInit {
       const formData = {
         username: this.registerForm.get('username')?.value,
         email: this.registerForm.get('email')?.value,
-        password: this.registerForm.get('password')?.value
+        password: this.registerForm.get('password')?.value,
+        
+
       };
 
-      // Call API to register the user with only necessary fields
       this.http.post('https://localhost:7227/api/Users/register', formData)
         .subscribe(response => {
           console.log('Registration successful:', response);
+          this.router.navigate(['/login']);
         }, error => {
           console.error('Registration failed:', error);
         });

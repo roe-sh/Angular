@@ -8,9 +8,9 @@ import { UserService, User } from '../user.service';  // Import UserService and 
 })
 export class UserListComponent implements OnInit {
   showUsers = true;
-  users: User[] = [];  // List of users fetched from the service
+  users: User[] = [];  
 
-  constructor(private userService: UserService) { }  // Inject the UserService
+  constructor(private userService: UserService) { }  
 
   ngOnInit(): void {
     // Fetch the users when the component initializes

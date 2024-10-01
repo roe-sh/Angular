@@ -12,12 +12,12 @@ export interface User {
 })
 export class UserService {
 
-  private apiUrl = 'https://localhost:7227/api/Users';  // Replace with actual API URL
+  private apiUrl = 'https://localhost:7227/api/Users'; 
 
-  constructor(private http: HttpClient) { }  // Inject HttpClient
+  constructor(private http: HttpClient) { } 
 
-  // Method to fetch users from the API
+  
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);  // Make a GET request to the API
+    return this.http.get<User[]>(this.apiUrl);  
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';  // Import AuthService
-import { Router } from '@angular/router';  // Import Router for redirection
+import { AuthService } from '../auth.service';  
+import { Router } from '@angular/router';  
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,9 +11,9 @@ export class NavBarComponent {
 
   constructor(public authService: AuthService, private router: Router) { }
 
-  // Log out the user and navigate to the login page
+  
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']);  // Redirect to login after logging out
+    this.router.navigate(['/login']); 
   }
 }
